@@ -1,0 +1,92 @@
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely edit after that. If you find
+# yourself editing this file very often, consider using Jekyll's data files
+# feature for the data you need to update frequently.
+#
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+#
+# If you need help with YAML syntax, here are some quick references for you: 
+# https://learn-the-web.algonquindesign.ca/topics/markdown-yaml-cheat-sheet/#yaml
+# https://learnxinyminutes.com/docs/yaml/
+#
+# Site settings
+# These are used to personalize your new site. If you look in the HTML files,
+# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
+# You can create any custom variable you would like, and they will be accessible
+# in the templates via {{ site.myvariable }}.
+
+title: BirdsArentReal CTF
+masthead_title: " "
+logo: "/assets/images/birdsarentrealctf.png"
+email: birdsarentrealctf@gmail.com
+description: >- # this means to ignore newlines until "baseurl:"
+  BirdsArentReal CTF Team
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://birdsarentrealctf.dev" # the base hostname & protocol for your site, e.g. http://example.com
+twitter_username: "birdsarentrealctf"
+github_username:  "birdsarentrealctf"
+
+# Build settings
+remote_theme: "mmistakes/minimal-mistakes@4.19.1"
+plugins:
+  - jekyll-include-cache
+  - jekyll-seo-tag
+
+search: true
+
+timezone: "America/Los Angeles"
+
+author:
+  name     : "BirdsArentReal"
+  avatar   : "/assets/images/logo.png"
+  bio      : "CTF Team <br>HackTheBox Top 5 Team"
+  location : "United States"
+  links  :
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter-square"
+      url: "https://twitter.com/birdsarentrealctf"
+    - label: "Github"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/BirdsArentRealCTF"
+    - label: "HackTheBox"
+      icon: "fas fa-cube"
+      url: "https://www.hackthebox.eu/teams/profile/1709"
+
+defaults:
+  # _posts
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: single
+      author_profile: true
+      read_time: false
+      comments: false
+      share: true
+      related: true
+
+excerpt_separator: "[separator]: <> ()"
+
+# Exclude from processing.
+# The following items will not be processed, by default.
+# Any item listed under the `exclude:` key here will be automatically added to
+# the internal "default list".
+#
+# Excluded items can be processed by explicitly listing the directories or
+# their entries' file path in the `include:` list.
+#
+# exclude:
+#   - .sass-cache/
+#   - .jekyll-cache/
+#   - gemfiles/
+#   - Gemfile
+#   - Gemfile.lock
+#   - node_modules/
+#   - vendor/bundle/
+#   - vendor/cache/
+#   - vendor/gems/
+#   - vendor/ruby/
+minimal_mistakes_skin: "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"
