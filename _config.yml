@@ -22,8 +22,7 @@ title: BirdsArentReal CTF
 masthead_title: " "
 logo: "/assets/images/birdsarentrealctf.png"
 email: birdsarentrealctf@gmail.com
-description: >- # this means to ignore newlines until "baseurl:"
-  BirdsArentReal CTF Team
+description: BirdsArentReal CTF Team
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://birdsarentrealctf.dev" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: "birdsarentrealctf"
@@ -34,6 +33,7 @@ remote_theme: "mmistakes/minimal-mistakes@4.19.1"
 plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
+  - jekyll-feed
 
 search: true
 
