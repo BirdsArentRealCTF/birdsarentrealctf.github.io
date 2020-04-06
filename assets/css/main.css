@@ -4,8 +4,8 @@
 .author__urls.social-icons .svg-inline--fa, .page__footer-follow .social-icons .svg-inline--fa { color: inherit; }
 
 /* next/previous buttons */
-.pagination--pager { color: #fff6fb; background-color: #675007; border-color: transparent; }
-.pagination--pager:visited { color: #fff6fb; }
+/*.pagination--pager { color: #fff6fb; background-color: #675007; border-color: transparent; }
+.pagination--pager:visited { color: #fff6fb; }*/
 
 .ais-search-box .ais-search-box--input { background-color: #110e0e; }
 
