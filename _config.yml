@@ -30,13 +30,20 @@ github_username:  "birdsarentrealctf"
 
 # Build settings
 remote_theme: "mmistakes/minimal-mistakes@4.19.1"
+minimal_mistakes_skin    : "birdsarentreal" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum", "sunrise"
 plugins:
   - jekyll-include-cache
   - jekyll-seo-tag
   - jekyll-feed
-    #  - jekyll-paginate
+  - jekyll-paginate
+
+whitelist:
+  - jekyll-paginate
 
 search: true
+
+paginate: 8
+paginate_path: /page:num/
 
 timezone: "America/Los Angeles"
 
@@ -69,11 +76,18 @@ defaults:
       share: true
       related: true
 
-excerpt_separator: "[separator]: <> ()"
+
+# excerpt_separator: "[separator]: <> ()"
 
 collections:
   content:
     output: true
+
+
+sass:
+  sass_dir: _sass
+  style: compressed
+    
 
 #paginate: 8
 
@@ -96,4 +110,3 @@ collections:
 #   - vendor/cache/
 #   - vendor/gems/
 #   - vendor/ruby/
-minimal_mistakes_skin: "neon" # "air", "aqua", "contrast", "dark", "dirt", "neon", "mint", "plum" "sunrise"

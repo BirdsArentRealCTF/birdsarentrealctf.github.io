@@ -1,6 +1,8 @@
 ---
 layout: single
 title: "HTB Stratosphere Writeup by dmw0ng"
+header:
+  teaser: /assets/images/teasers/stratosphere.png
 ---
 
 [separator]: <> ()

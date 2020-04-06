@@ -7,5 +7,5 @@ Pseudo is the toughest challenge on HTB in my opinion as of 2019 (well, before h
 
 [separator]: <> ()
 
-<iframe src='https://www.willsroot.io/2019/11/pseudo-hackthebox-writeup.html' width="800" height="900"></iframe>
+<iframe src='https://www.willsroot.io/2019/11/pseudo-hackthebox-writeup.html' width="900" height="900"></iframe>
 
