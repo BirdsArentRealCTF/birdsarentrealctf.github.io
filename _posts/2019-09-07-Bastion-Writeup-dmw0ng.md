@@ -3,7 +3,6 @@ layout: single
 title: "HTB Bastion Writeup by dmw0ng"
 ---
 
-Registry is a Hard-rated HackTheBox machine that involved getting a foothold related to a docker registry and then abusing and chaining multiple flaws to escalate privileges.
 
 [separator]: <> ()
 
