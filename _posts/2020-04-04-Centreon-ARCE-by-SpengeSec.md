@@ -8,9 +8,13 @@ title: "Centreon ARCE CVE by SpengeSec"
 1. Authenticated Remote Code Execution (CVE-2019-19699)
 2. Privilege escalation (Walkthrough & Mitigation)
 
-Discovered by:
-_SpengeSec (Guylian Dw)_ &
+Discovered by:  
+_SpengeSec (Guylian Dw)_ &  
 _TheCyberGeek (Matthew B)_
+
+Check out SpengeSec's website and github!  
+[Website](https://spenge.pw/)  
+[Github](https://github.com/sp3nge)
 
 [separator]: <> ()
 
