@@ -13,23 +13,23 @@ We first start off with an **nmap** scan of the machine IP Address. Then we conv
 ![](/content/plasticuproject/mango/pics/user/1.png)
 ![](/content/plasticuproject/mango/pics/user/2.png)
 
-Here we see there is an **apache webserver** running on port 80 and port 443, and a listening **SSH server** on port 22.
+Here we see there is an **Apache Web Server** running on **port 80** and **port 443**, and a listening **SSH Server** on **port 22**.
 ![](/content/plasticuproject/mango/pics/user/3.png)
 ![](/content/plasticuproject/mango/pics/user/4.png)
 
-We now add those to our /etc/hosts file.
+We now add those to our **/etc/hosts** file.
 ![](/content/plasticuproject/mango/pics/user/5.png)
 
-Next we check out the webpages in a browser. We see the one on port 443 looks like some type of search engine, and has a user logged in.
+Next we check out the web pages in a browser. We see the one on **port 443** looks like some type of search engine, and has a user logged in.
 ![](/content/plasticuproject/mango/pics/user/6.png)
 
 So we have a look around in the few places that we can, which doesn't give us much to go on or do.
 ![](/content/plasticuproject/mango/pics/user/7.png)
 
-Next we see if there is any valuble information we can use in the **SSL Certificate**. Here we find a registered email address for this server. This could possibly be a **user login name**.
+Next we see if there is any valuable information we can use in the **SSL Certificate**. Here we find a registered email address for this server. This could possibly be a **user name**.
 ![](/content/plasticuproject/mango/pics/user/13.png)
 
-We then check out the webpage on port 80 and find some sort of login portal. We enter a test username and password, then intercept the request with Burpsuite to see what it looks like.
+We then check out the web page on **port 80** and find some sort of **login page**. We enter a test username and password, then intercept the request with Burpsuite to see what it looks like.
 ![](/content/plasticuproject/mango/pics/user/10.png)
 ![](/content/plasticuproject/mango/pics/user/9.png)
 
@@ -44,7 +44,7 @@ We try to guess a few usernames, including **admin** and **mango** and make a fe
 ![](/content/plasticuproject/mango/pics/user/14.png)
 ![](/content/plasticuproject/mango/pics/user/15.png)
 
-We then try to log into the web portal with the two accounts. With the **admin** account we get this page as a response.
+We then try to log into the web service with the two accounts. With the **admin** account we get this page as a response.
 ![](/content/plasticuproject/mango/pics/user/16.png)
 
 Next we try to long into the **SSH** server with the **admin** credentials but fail. So we try the **mango** credentials and successfully log into the machine.
@@ -54,7 +54,7 @@ After browsing around a bit we see that there is a **user.txt** file in **~/home
 ![](/content/plasticuproject/mango/pics/user/18.png)
 
 ## Root
-To perform more enumeration on this machine, we start a simple python server and use wget to download **linPEAS** from our host machine, then run the script.</br>
+To perform more enumeration on this machine, we start a simple python http server and use wget to download **linPEAS** from our host machine, then run the script.</br>
 https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS
 ![](/content/plasticuproject/mango/pics/root/1.png)
 ![](/content/plasticuproject/mango/pics/root/3.png)
