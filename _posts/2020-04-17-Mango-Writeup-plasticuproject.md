@@ -50,11 +50,11 @@ We then check out the web page on **port 80** and find some sort of **login page
 ![](/content/plasticuproject/mango/pics/user/9.png)
 
 
-After a lot of googling and with the assumption that the name "Mango" may refer to "Mongo", as in **MongoDB**, we find that it may be vulnerable to a **NOSQL Injection** attack, where we can fish out user passwords from the database.</br>
-https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection#mongodb-payloads</br>
+After a lot of googling and with the assumption that the name "Mango" may refer to "Mongo", as in **MongoDB**, we find that it may be vulnerable to a **NOSQL Injection** attack, where we can fish out user passwords from the database.
+https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection#mongodb-payloads
 
-We also find a script that may help us do this.</br>
-https://blog.0daylabs.com/2016/09/05/mongo-db-password-extraction-mmactf-100/</br>
+We also find a script that may help us do this.
+https://blog.0daylabs.com/2016/09/05/mongo-db-password-extraction-mmactf-100/
 
 We try to guess a few usernames, including **admin** and **mango** and make a few edits to the script to get it working right. We were able to successfully extract the passwords for those two user accounts.
 
@@ -79,7 +79,7 @@ After browsing around a bit we see that there is a **user.txt** file in **~/home
 
 
 ## Root
-To perform more enumeration on this machine, we start a simple python http server and use wget to download **linPEAS** from our host machine, then run the script.</br>
+To perform more enumeration on this machine, we start a simple python http server and use wget to download **linPEAS** from our host machine, then run the script.
 https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS
 
 ![](/content/plasticuproject/mango/pics/root/1.png)
@@ -91,7 +91,7 @@ https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/m
 ![](/content/plasticuproject/mango/pics/root/4.png)
 
 
-After a bit of googling we see there is a common **privilege escalation** vulnerbility for **jjs**.</br>
+After a bit of googling we see there is a common **privilege escalation** vulnerbility for **jjs**.
 https://gtfobins.github.io/gtfobins/jjs/
 
 ![](/content/plasticuproject/mango/pics/root/5.png)
