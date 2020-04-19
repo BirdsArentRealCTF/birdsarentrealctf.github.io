@@ -51,10 +51,9 @@ We then check out the web page on **port 80** and find some sort of **login page
 
 
 After a lot of googling and with the assumption that the name "Mango" may refer to "Mongo", as in **MongoDB**, we find that it may be vulnerable to a **NOSQL Injection** attack, where we can fish out user passwords from the database.
-https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection#mongodb-payloads
+[MongoDB Payloads](https://github.com/swisskyrepo/PayloadsAllTheThings/tree/master/NoSQL%20Injection#mongodb-payloads)
 
-We also find a script that may help us do this.
-https://blog.0daylabs.com/2016/09/05/mongo-db-password-extraction-mmactf-100/
+We also find a [script](https://blog.0daylabs.com/2016/09/05/mongo-db-password-extraction-mmactf-100/) that may help us do this.
 
 We try to guess a few usernames, including **admin** and **mango** and make a few edits to the script to get it working right. We were able to successfully extract the passwords for those two user accounts.
 
@@ -73,14 +72,13 @@ Next we try to long into the **SSH** server with the **admin** credentials but f
 ![](/content/plasticuproject/mango/pics/user/17.png)
 
 
-After browsing around a bit we see that there is a **user.txt** file in **~/home/admin/**, but we do not have access to read the file as our current user. So we try to **su** to the **admin** user with the credentials we have and are successful. We can now read the contents of **user.txt**.
+After browsing around a bit we see that there is a **user.txt** file in **/home/admin/**, but we do not have access to read the file as our current user. So we try to **su** to the **admin** user with the credentials we have and are successful. We can now read the contents of **user.txt**.
 
 ![](/content/plasticuproject/mango/pics/user/18.png)
 
 
 ## Root
-To perform more enumeration on this machine, we start a simple python http server and use wget to download **linPEAS** from our host machine, then run the script.
-https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS
+To perform more enumeration on this machine, we start a simple python http server and use wget to download [**linPEAS**](https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/master/linPEAS) from our host machine, then run the script.
 
 ![](/content/plasticuproject/mango/pics/root/1.png)
 ![](/content/plasticuproject/mango/pics/root/3.png)
@@ -91,8 +89,7 @@ https://github.com/carlospolop/privilege-escalation-awesome-scripts-suite/tree/m
 ![](/content/plasticuproject/mango/pics/root/4.png)
 
 
-After a bit of googling we see there is a common **privilege escalation** vulnerbility for **jjs**.
-https://gtfobins.github.io/gtfobins/jjs/
+After a bit of googling we see there is a common [**privilege escalation vulnerability for jjs**](https://gtfobins.github.io/gtfobins/jjs/).
 
 ![](/content/plasticuproject/mango/pics/root/5.png)
 
