@@ -2,7 +2,7 @@
 layout: single
 title: "HTB Control Writeup by dmw0ng"
 header:
-  teaser: /assets/images/teasers/heist.png
+  teaser: /assets/images/teasers/control.jpg
 excerpt: "Control is a hard-rated box that required writing a shell through an SQL injection, using previously acquired hashes to pivote to a different user and then modifying a service to gain an Administrator shell."
 ---
 
