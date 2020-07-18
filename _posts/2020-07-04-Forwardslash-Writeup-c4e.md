@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 title: "HTB Forwardslash Writeup by c4e"
 header:
   teaser: /assets/images/teasers/forwardslash.png
