@@ -9,10 +9,10 @@ excerpt: "Now that Dream Diary: Chapter 1 has finally retired, here is my writeu
 
 Now that Dream Diary: Chapter 1 has finally retired, here is my writeup for it. This problem along with Chapter 2 were perhaps the 2 heap challenges I solved over a year ago that helped me start to understand heap pwn, and also inspired me to develop Dream Diary: Chapter 3 down the road. 
 
-Before continuing, here are some quick acknowledgements:
-These two articles helped me improve my understanding of the heap tremendously when I started pwn a year ago.
-https://0x00sec.org/t/null-byte-poisoning-the-magic-byte/3874
-https://devel0pment.de/?p=688
+Before continuing, here are some quick acknowledgements:  
+These two articles helped me improve my understanding of the heap tremendously when I started pwn a year ago.  
+https://0x00sec.org/t/null-byte-poisoning-the-magic-byte/3874   
+https://devel0pment.de/?p=688   
 Also, huge thanks to [D3v17](https://syst3mfailure.github.io/) and c3bacd17 for proofreading this writeup.
 
 To begin, note the hint about "Xenial Xerus"; I did all my debugging and testing on a Xenial Xerus headless VM.
