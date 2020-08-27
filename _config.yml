@@ -50,7 +50,7 @@ timezone: "America/Los Angeles"
 author:
   name     : "BirdsArentReal"
   avatar   : "/assets/images/logo.png"
-  bio      : "CTF Team <br>HackTheBox Top 5 Team"
+  bio      : "CTF Team <br>HackTheBox Top 3 Team"
   location : "United States"
   links  :
     - label: "Twitter"
