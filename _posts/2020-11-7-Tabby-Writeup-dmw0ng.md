@@ -1,5 +1,6 @@
 ---
 layout: single
+classes: wide
 title: "HTB Tabby Writeup by dmw0ng"
 header:
   teaser: /assets/images/teasers/tabby.png
